@@ -1,6 +1,5 @@
 package ApachePOI;
 
-import org.apache.poi.hssf.usermodel.HSSFCellStyle;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.ss.util.CellRangeAddress;
 import org.apache.poi.xssf.usermodel.XSSFCellStyle;
@@ -9,11 +8,11 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class CarpimTablosu3 {
+public class multiplicationChart {
     public static void main(String[] args) throws IOException {
 
         XSSFWorkbook workbook = new XSSFWorkbook();
-        XSSFSheet sheet = workbook.createSheet("Sayfa1");
+        XSSFSheet sheet = workbook.createSheet("Sheet1");
 
         XSSFCellStyle style10=workbook.createCellStyle();
         style10.setFillForegroundColor(IndexedColors.LAVENDER.getIndex());
@@ -37,34 +36,34 @@ public class CarpimTablosu3 {
 
         Row baslik0 = sheet.createRow(1);
         Cell yenicell0 = baslik0.createCell(1);
-        yenicell0.setCellValue("ÇARPIM TABLOSU");
+        yenicell0.setCellValue("MULTIPLICATION CHART");
         sheet.addMergedRegion(CellRangeAddress.valueOf("B2:AD2"));
         yenicell0.setCellStyle(style10);
         yenicell0.getCellStyle().setAlignment(HorizontalAlignment.CENTER);
 
         Row baslik = sheet.createRow(3);
         Cell yenicell = baslik.createCell(3);
-        yenicell.setCellValue("BİRLER");
+        yenicell.setCellValue("ONE");
         Cell yenicell2 = baslik.createCell(9);
-        yenicell2.setCellValue("İKİLER");
+        yenicell2.setCellValue("TWO");
         Cell yenicell3 = baslik.createCell(15);
-        yenicell3.setCellValue("ÜÇLER");
+        yenicell3.setCellValue("THREE");
         Cell yenicell4 = baslik.createCell(21);
-        yenicell4.setCellValue("DÖRTLER");
+        yenicell4.setCellValue("FOUR");
         Cell yenicell5 = baslik.createCell(27);
-        yenicell5.setCellValue("BEŞLER");
+        yenicell5.setCellValue("FIVE");
 
         Row baslik2 = sheet.createRow(17);
         Cell yenicell6 = baslik2.createCell(3);
-        yenicell6.setCellValue("ALTILAR");
+        yenicell6.setCellValue("SIX");
         Cell yenicell7 = baslik2.createCell(9);
-        yenicell7.setCellValue("YEDİLER");
+        yenicell7.setCellValue("SEVEN");
         Cell yenicell8 = baslik2.createCell(15);
-        yenicell8.setCellValue("SEKİZLER");
+        yenicell8.setCellValue("EIGHT");
         Cell yenicell9 = baslik2.createCell(21);
-        yenicell9.setCellValue("DOKUZLAR");
+        yenicell9.setCellValue("NINE");
         Cell yenicell10 = baslik2.createCell(27);
-        yenicell10.setCellValue("ONLAR");
+        yenicell10.setCellValue("TEN");
 
         int satir = 4;
         for (int i = 1; i < 11; i++) {
@@ -131,11 +130,11 @@ public class CarpimTablosu3 {
             }
         }
 
-              String yeniExcelPath = "src/test/java/ApachePOI/resource/YeniExcel.xlsx";
+              String yeniExcelPath = "src/test/java/ApachePOI/resource/newExcel.xlsx";
                 FileOutputStream outputStream = new FileOutputStream(yeniExcelPath);
                 workbook.write(outputStream);
                 workbook.close();
                 outputStream.close();
-                System.out.println("işlem tamamlandı");
+                System.out.println("DONE");
             }
         }
